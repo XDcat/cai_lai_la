@@ -105,18 +105,35 @@ public class ProductDetailActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Cart cart;
+                Cart cart = new Cart();
                 // 只有在登陆的的时候添加购物车信息
-                if (UserController.isLog(ProductDetailActivity.this)){
-                    User user = UserController.loadUser(ProductDetailActivity.this);
-                    List<Product> list = CartController.list(user.getUid());
-                    // 判断用户是否有该商品，如果有则在基础上添加，如果没有则是创建新的
-                    for (Product p :
-                            list) {
-                    }
+                if (UserController.isLog(ProductDetailActivity.this)) {
+                    new Thread(() -> {
+                        User user = UserController.loadUser(ProductDetailActivity.this);
+                        List<Product> list = CartController.list(user.getUid());
+                        // 判断用户是否有该商品，如果有则在基础上添加，如果没有则是创建新的
+                        boolean isInCart = false;
+                        for (Product p :
+                                list) {
+                            if (p.getPid().equals(product.getPid())) {
+                                isInCart = true;
+                            }
+                        }
+                        if (!isInCart) {
+                            cart.setNum(1);
+                            cart.setPid(product.getPid());
+                            cart.setUid(user.getUid());
+                            CartController.add(cart);
+                            Snackbar.make(view, "已经添加到购物车", Snackbar.LENGTH_LONG)
+                                    .setAction("Action", null).show();
+                        } else{
+                            Snackbar.make(view, "该商品已经在购物车中", Snackbar.LENGTH_LONG)
+                                    .setAction("Action", null).show();
+                        }
+                    }).start();
                 } else {
-                Snackbar.make(view, "您尚未登录，请登陆后再尝试哟", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                    Snackbar.make(view, "您尚未登录，请登陆后再尝试哟", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
                 }
             }
         });

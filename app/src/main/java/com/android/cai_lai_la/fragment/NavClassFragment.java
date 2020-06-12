@@ -10,9 +10,6 @@ import com.android.cai_lai_la.R;
 import androidx.fragment.app.Fragment;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link NavClassFragment#newInstance} factory method to
- * create an instance of this fragment.
  */
 public class NavClassFragment extends Fragment {
     public NavClassFragment() {

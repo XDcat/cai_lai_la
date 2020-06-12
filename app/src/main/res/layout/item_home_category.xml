@@ -13,9 +13,4 @@
 		android:layout_marginLeft="@dimen/home_category_margin_left_right"
 		android:layout_marginRight="@dimen/home_category_margin_left_right"
 		/>
-<!--	<ImageView-->
-<!--		android:layout_width="match_parent"-->
-<!--		android:layout_height="4dp"-->
-<!--		android:background="#fff"-->
-<!--		/>-->
 </LinearLayout>

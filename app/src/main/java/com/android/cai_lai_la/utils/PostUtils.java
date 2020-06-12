@@ -20,6 +20,7 @@ public class PostUtils {
     public static JSONObject postJson(String url, String json) {
         Log.i(TAG, "postJson: 通过json获取数据");
         Log.i(TAG, "postJson: url = " + Config.IP + url);
+        Log.i(TAG, "postJson: json= " + json);
         String res = "";  // 结果
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
