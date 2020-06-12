@@ -47,7 +47,7 @@
         android:id="@+id/ig_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:edt_hint_content="修改昵称"
+        app:edt_hint_content="昵称"
         app:paddingLeft="@dimen/home_category_item_margin_left_right"
         app:title="昵称" />
 
