@@ -20,7 +20,6 @@ public class TitleLayout extends LinearLayout {
         LinearLayout bar_title = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.activity_specific_info_title, this);
         iv_backward = (ImageView) bar_title.findViewById(R.id.activity_specific_info_backward);
         tv_title = (TextView) bar_title.findViewById(R.id.activity_specific_info_title);
-        tv_forward = (TextView) bar_title.findViewById(R.id.activity_specific_info_forward);
 
         //设置监听器
         //如果点击back则结束活动

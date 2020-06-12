@@ -50,7 +50,6 @@ public class ItemGroup extends FrameLayout {
         itemGroupLayout = (LinearLayout) view.findViewById(R.id.activity_item_group_layout);
         titleTv = (TextView) view.findViewById(R.id.activity_item_group_title);
         contentEdt = (TextView) view.findViewById(R.id.activity_item_group_content_edt);
-        jtRightIv = (ImageView) view.findViewById(R.id.activity_item_group_jt_right_iv);
         addView(view); //把自定义的这个组合控件的布局加入到当前FramLayout
     }
     /**
@@ -101,6 +100,5 @@ public class ItemGroup extends FrameLayout {
 //        contentEdt.setFocusable(isEditable); //设置输入框是否可以编辑
 //        contentEdt.setClickable(true);
 //        contentEdt.setKeyListener(null);
-        jtRightIv.setVisibility(showJtIcon ? View.VISIBLE : View.GONE);  //设置向右的箭头图标是否可见
     }
 }

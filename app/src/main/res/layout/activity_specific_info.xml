@@ -31,13 +31,7 @@
             android:scaleType="centerCrop"
             android:src="@drawable/ic_user_head"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="修改头像"
-            android:textColor="@color/gray3"
-            android:layout_gravity="center"
-            android:paddingLeft="@dimen/home_category_item_margin_left_right"/>
+
 
     </LinearLayout>
     <!--    编辑界面，此处可以写成一个ItemGroup上传至com上-->
@@ -47,7 +41,7 @@
         android:layout_height="wrap_content"
         app:jt_visible="false"
         app:paddingLeft="@dimen/home_category_item_margin_left_right"
-        app:title="ID号: 00000000" />
+        app:title="ID号:" />
 
     <com.android.cai_lai_la.widget.ItemGroup
         android:id="@+id/ig_name"
@@ -58,29 +52,13 @@
         app:title="昵称" />
 
     <com.android.cai_lai_la.widget.ItemGroup
-        android:id="@+id/ig_gender"
+        android:id="@+id/ig_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:edt_hint_content="性别"
+        app:edt_hint_content="邮箱"
         app:paddingLeft="@dimen/home_category_item_margin_left_right"
-        app:title="性别"/>
+        app:title="邮箱"/>
 
-    <com.android.cai_lai_la.widget.ItemGroup
-        android:id="@+id/ig_region"
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        app:edt_hint_content="未选择"
-        app:paddingLeft="@dimen/home_category_item_margin_left_right"
-        app:title="常住地" />
-
-    <com.android.cai_lai_la.widget.ItemGroup
-        android:id="@+id/ig_brithday"
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        app:edt_hint_content="未选择"
-        app:paddingLeft="@dimen/home_category_item_margin_left_right"
-        app:title="生日" />
-    
     <Button
         android:id="@+id/bt_logout"
         android:layout_width="match_parent"
