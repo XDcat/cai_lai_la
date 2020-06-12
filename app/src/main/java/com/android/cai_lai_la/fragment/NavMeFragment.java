@@ -10,13 +10,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
 import com.android.cai_lai_la.R;
 import com.android.cai_lai_la.activity.PersonalInfoActivity;
 import com.android.cai_lai_la.controller.UserController;
 import com.android.cai_lai_la.model.User;
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -49,6 +50,13 @@ public class NavMeFragment extends Fragment {
 
     @Override
     public void onResume() {
+        boolean isLog = UserController.isLog(getContext());
+        if (isLog) {
+            User user = UserController.loadUser(getContext());
+            userName.setText(user.getNickname());
+        } else {
+            userName.setText("用户名");
+        }
         super.onResume();
     }
 
@@ -65,12 +73,6 @@ public class NavMeFragment extends Fragment {
                 startActivity(new Intent(getActivity(), PersonalInfoActivity.class));
             }
         });
-
-
-        if (UserController.isLog(getContext())){
-            User user = UserController.loadUser(getContext());
-            userName.setText(user.getNickname());
-        }
         return view;
     }
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
